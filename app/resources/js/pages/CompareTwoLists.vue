@@ -40,7 +40,13 @@
                     <li>
                         <label class="cursor-pointer select-none">
                             <input v-model="options.removeDuplicates" type="checkbox" name="trim" />
-                            Remove duplicates before compare
+                            Remove duplicates before compare (cleaning tables of duplicates)
+                        </label>
+                    </li>
+                    <li>
+                        <label class="cursor-pointer select-none">
+                            <input v-model="options.removeDuplicatesAfter" type="checkbox" name="trim" />
+                            Remove duplicates after compare (cleaning the results board of duplicates)
                         </label>
                     </li>
                 </ul>
@@ -90,8 +96,8 @@ import { Head } from '@inertiajs/vue3';
 import { ref } from 'vue'; 
 
 
-const primaryData = ref<string>('111;222;333;444;555;666;777;888;999;222;');
-const secondaryData = ref<string>('000;444;888;121;232;343;888');
+const primaryData = ref<string>('111;222;222;333;444;555;666;777;888;999;');
+const secondaryData = ref<string>('000;444;444;888;121;232;343;888');
 
 const primarySeparator = ref<string>(';');
 const secondarySeparator = ref<string>(';');
@@ -101,9 +107,10 @@ const secondaryList = ref<string[]>([]);
 
 const preparedData = ref<{ value: string; source: string; both: boolean }[]>([]);
 
-const options = ref<{ trim: boolean; removeDuplicates: boolean; removeEmpty: boolean }>({
+const options = ref<{ trim: boolean; removeDuplicates: boolean; removeDuplicatesAfter: boolean; removeEmpty: boolean }>({
     trim: false,
     removeDuplicates: false,
+    removeDuplicatesAfter: false,
     removeEmpty: false,
 });
 
@@ -124,6 +131,9 @@ const prepareLists = () => {
     for (let index in secondaryList.value) {
         compare(false, index);
     }
+
+    removeDuplicatesAfter();
+    sortResults();
 };
 
 const removeDuplicates = () => {
@@ -151,6 +161,18 @@ const trimListsData = () => {
 
     primaryList.value = primaryList.value.map(v => v.trim());
     secondaryList.value = secondaryList.value.map(v => v.trim());
+};
+
+const removeDuplicatesAfter = () => {
+    if (! options.value.removeDuplicatesAfter) {
+        return;
+    }
+
+    preparedData.value = Array.from(new Map(preparedData.value.map(item => [item.value, item])).values());
+};
+
+const sortResults = () => {
+    preparedData.value.sort((a, b) => a.value.localeCompare(b.value));
 };
 
 const compare = (isPrimary: boolean, index: any) => {
