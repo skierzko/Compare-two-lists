@@ -4,8 +4,9 @@
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     </Head>
     <div>
-        <section class="p-4 bg-green-800 text-green-500 text-2xl">
-            Compare Two Lists
+        <section class="flex p-4 bg-green-800 text-green-500 items-center">
+            <div class="flex-1 text-2xl">Compare Two Lists</div>
+            <div class="text-md"><a href="https://kierzkowski.net">Go to author site</a></div>
         </section>
 
         <section class="p-4">
@@ -87,6 +88,19 @@
                     </div>
                 </template>
             </div>
+
+            <div v-if="preparedData.length === 0" class="text-center p-8 text-gray-400">
+                <svg class="w-6 h-6 inline relative top-[-2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                </svg>
+                Click "Compare data" to show results
+            </div>
+        </section>
+
+        <hr class="m-4 opacity-20" />
+
+        <section class="p-4 text-gray-400">
+            Created by Sylwester Kierzkowski | 2025 | <a href="https://kierzkowski.net">kierzkowski.net</a>
         </section>
     </div>
 </template>
