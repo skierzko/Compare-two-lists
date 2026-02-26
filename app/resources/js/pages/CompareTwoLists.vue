@@ -11,8 +11,8 @@
         </section>
 
         <section class="p-4">
-            <div class="flex gap-4">
-                <div class="flex-1 bg-white p-4 rounded-xl shadow-sm">
+            <div class="sm:flex gap-4">
+                <div class="mb-4 sm:mb-0 flex-1 bg-white p-4 rounded-xl shadow-sm">
                     <p class="text-xl mb-2">Primary List</p>
 
                     <div class="flex gap-2 items-center mb-4">
@@ -90,7 +90,7 @@
 
                 <div class="grid grid-cols-3 gap-4 ">
                     <div class="flex-1">
-                        <p class="flex justify-center gap-2 mb-2">
+                        <p class="sm:flex justify-center gap-2 mb-2">
                             <span class="text-xl">
                                 <svg class="inline-block w-6 h-6 relative top-[-1px] text-amber-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                                     <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z" clip-rule="evenodd"/>
@@ -98,11 +98,11 @@
 
                                 Only in Primary
                             </span>
-                            <span class="text-sm bg-gray-200 text-gray-600 rounded-md p-1">{{ countPrimaryData() }} items</span>
+                            <div class="text-sm bg-gray-200 text-gray-600 rounded-md p-1">{{ countPrimaryData() }} items</div>
                         </p>
                     </div>
                     <div class="flex-1">
-                        <p class="flex justify-center gap-2 mb-2">
+                        <p class="sm:flex justify-center gap-2 mb-2">
                             <span class="text-xl">
                                 <svg class="inline-block w-6 h-6 relative top-[-1px] text-green-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                                     <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z" clip-rule="evenodd"/>
@@ -110,11 +110,11 @@
 
                                 In Both Lists
                             </span>
-                            <span class="text-sm bg-gray-200 text-gray-600 rounded-md p-1">{{ countBothData() }} items</span>
+                            <div class="text-sm bg-gray-200 text-gray-600 rounded-md p-1">{{ countBothData() }} items</div>
                         </p>
                     </div>
                     <div class="flex-1">
-                        <p class="flex justify-center gap-2 mb-2">
+                        <p class="sm:flex justify-center gap-2 mb-2">
                             <span class="text-xl">
                                 <svg class="inline-block w-6 h-6 relative top-[-1px] text-sky-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                                     <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z" clip-rule="evenodd"/>
@@ -122,7 +122,7 @@
 
                                 Only in Secondary
                             </span>
-                            <span class="text-sm bg-gray-200 text-gray-600 rounded-md p-1">{{ countSecondaryData() }} items</span>
+                            <div class="text-sm bg-gray-200 text-gray-600 rounded-md p-1">{{ countSecondaryData() }} items</div>
                         </p>
                     </div>
                 </div>
