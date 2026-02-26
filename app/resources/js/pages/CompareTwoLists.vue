@@ -99,8 +99,12 @@
 
         <hr class="m-4 opacity-20" />
 
-        <section class="p-4 text-gray-400">
-            Created by Sylwester Kierzkowski | 2025 | <a href="https://kierzkowski.net">kierzkowski.net</a>
+        <section class="p-4 bg-green-200 text-green-800 text-center border-t-2 border-t-green-800">
+            © 2026 Sylwester Kierzkowski
+            <br />
+            Designed and developed by Sylwester Kierzkowski. This project is open for copying, modification, and use for any purpose.
+            <br />
+            Go to my portfolio: <a href="https://kierzkowski.net" target="blank">kierzkowski.net</a>
         </section>
     </div>
 </template>
